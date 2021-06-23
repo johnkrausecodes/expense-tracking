@@ -4,6 +4,7 @@ import "./Expenses.css";
 import Card from "../UI/Card";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpensesList from "./ExpensesList";
+import ExpensesChart from './ExpensesChart'
 
 const Expenses = (props) => {
   const [enteredYear, setEnteredYear] = useState("2021");
@@ -22,6 +23,7 @@ const Expenses = (props) => {
           year={enteredYear}
           yearChangeHandler={yearChangeHandler}
         />
+        <ExpensesChart expenses={filteredExpenses}/>
         <ExpensesList items = {filteredExpenses} />
         {/* {filteredExpenses.length === 0 ? ( This is a ternary JS that could be used instead of the if statement
           <p>No Expenses found.</p>
